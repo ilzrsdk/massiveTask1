@@ -17,15 +17,35 @@ fun main() {
         print("Введите количество столбцов: ")
         j = readln()
     }
-    val str = i.toInt()
-    val stl = j.toInt()
-    var Massive = IntArray(str*stl)
-    for (i in Massive)
+    val Massive = Array(i.toInt()) { IntArray(j.toInt()) }
+    for (i in 0 .. Massive.size - 1)
     {
-        for (j in Massive)
+        for (j in 0 .. Massive[0].size - 1)
         {
-            Massive[i] = readln()
+            print("Введите трехзначное число: ")
+            var num = readln()
+            while ( num.toIntOrNull() == null || num.toInt() < 100 || num.toInt() > 999)
+            {
+                println("Ошибка ввода!")
+                print("Введите трехзначное число: ")
+                num = readln()
+            }
+            Massive[i][j] = num.toInt()
         }
     }
-
+    val digits = mutableSetOf<Char>()
+    println("Массив:")
+    for (m in Massive)
+    {
+        for (n in m)
+        {
+            print("$n ")
+            for (i in n.toString())
+            {
+                digits.add(i)
+            }
+        }
+        println()
+    }
+    println("\nВ массиве ${digits.size} различных цифр")
 }
