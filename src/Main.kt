@@ -34,7 +34,7 @@ fun main() {
         }
     }
     val digits = mutableSetOf<Char>()
-    println("Массив:")
+    println("Массив: ")
     for (m in 0 .. Massive.size - 1)
     {
         for (n in 0 .. Massive[0].size - 1)
