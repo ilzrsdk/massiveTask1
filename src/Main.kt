@@ -35,12 +35,13 @@ fun main() {
     }
     val digits = mutableSetOf<Char>()
     println("Массив:")
-    for (m in Massive)
+    for (m in 0 .. Massive.size - 1)
     {
-        for (n in m)
+        for (n in 0 .. Massive[0].size - 1)
         {
-            print("$n ")
-            for (i in n.toString())
+            var el = Massive[m][n].toString()
+            print("$el ")
+            for (i in el)
             {
                 digits.add(i)
             }
